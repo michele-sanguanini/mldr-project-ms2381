@@ -22,14 +22,18 @@ This will turn your terminal into something like:
 and you can exit it via typing `exit` within the app terminal.
 
 While within the shell, try and type 
+
 `dvc version`
+
 `uv venv; uv pip install ollama`
 
 From your browser try to go to the following addresses:
+
 minIO web console: http://localhost:9001/
+
 ollama host: http://localhost:11434 
 
-Standing down the containers using `docker compose down` and then go to the addresses again. Run `docker compose up` again to restart the containers
+Try standing down the containers using `docker compose down` and then go to the addresses again. Run `docker compose up` again to restart the containers
 
 ### Let's try to run ollama from the container
 
@@ -54,6 +58,3 @@ print(response["message"]["content"])
 ```
 - the result should be a generated AI response; in case of an error like `ollama._types.ResponseError: model requires more system memory (3.5 GiB) than is available (2.7 GiB) (status code: 500)` you might need to allocate more memory to the virtual machine (in Rancher Desktop it is sufficient to go to `Preferences > Virtual Machine > Memory (GB)` and set the limit to 6GB);
 - once you stand down the container (unless you have some local uv/ollama setup) you should not be able to do any of the actions you've just taken.
-
-
-## Subsequent runs
