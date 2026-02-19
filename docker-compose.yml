@@ -22,6 +22,12 @@ services:
       - "11434:11434"
     volumes:
       - ollama_data:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     # Uncomment for NVIDIA GPU support:
     # deploy:
     #   resources:
@@ -30,6 +36,16 @@ services:
     #         - driver: nvidia
     #           count: all
     #           capabilities: [gpu]
+
+  ollama-init:
+    image: ollama/ollama:latest
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    depends_on:
+      ollama:
+        condition: service_healthy
+    entrypoint: ["ollama", "pull", "phi3"]
+    restart: "no"
 
   app:
     build: .
