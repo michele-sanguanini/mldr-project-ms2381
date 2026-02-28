@@ -1,0 +1,6 @@
+outs:
+- md5: aadfa2c18003c14d603820c29e90ed4c
+  size: 991361
+  isexec: true
+  hash: md5
+  path: data.csv
