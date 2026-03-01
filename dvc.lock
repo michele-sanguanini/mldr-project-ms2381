@@ -1,0 +1,22 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: uv run python train.py
+    deps:
+    - path: data/data.csv
+      hash: md5
+      md5: 0f9de68e012bd3aed5fa7cdc9fc421af
+      size: 977501
+    - path: train.py
+      hash: md5
+      md5: 436e706094decbf1980ef728d07b1eaf
+      size: 2629
+    outs:
+    - path: metrics/linear_regression.json
+      hash: md5
+      md5: f794b590d25aa4083035cb56d8a701ce
+      size: 46
+    - path: metrics/xgboost.json
+      hash: md5
+      md5: 06dd623000f40615edbf25695f3a3479
+      size: 45

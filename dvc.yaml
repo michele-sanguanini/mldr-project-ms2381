@@ -1,0 +1,11 @@
+stages:
+  train:
+    cmd: uv run python train.py
+    deps:
+      - train.py
+      - data/data.csv
+    metrics:
+      - metrics/linear_regression.json:
+          cache: false
+      - metrics/xgboost.json:
+          cache: false

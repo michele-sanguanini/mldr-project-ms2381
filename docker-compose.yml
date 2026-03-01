@@ -51,7 +51,7 @@ services:
   app:
     build: .
     volumes:
-      - .:/workspace
+      - .:/workspace  # Bidirectional mount: DVC metrics/lock files written in the container appear locally
     working_dir: /workspace
     env_file: .env
     environment:

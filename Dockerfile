@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     git \
     ca-certificates \
+    libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
 # Install uv
@@ -20,5 +21,14 @@ RUN uv tool install "dvc[s3]"
 ENV PATH="/root/.local/bin:$PATH"
 
 WORKDIR /workspace
+
+# Git identity required by DVC for experiment tracking
+RUN git config --global user.email "dvc@container" && \
+    git config --global user.name "DVC"
+
+# Pre-install project dependencies for faster first run
+# The actual project files are mounted at runtime via a volume
+COPY pyproject.toml uv.lock ./
+RUN uv sync --frozen --no-dev
 
 CMD ["bash"]
