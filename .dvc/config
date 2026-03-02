@@ -1,0 +1,6 @@
+[core]
+    remote = storage
+['remote "storate"']
+    url = s3://dvc/dvcstore
+['remote "storage"']
+    url = s3://dvc/dvcstore
