@@ -45,7 +45,7 @@ services:
     depends_on:
       ollama:
         condition: service_healthy
-    entrypoint: ["/bin/sh", "-c", "ollama pull phi3 && ollama pull nomic-embed-text"]
+    entrypoint: ["/bin/sh", "-c", "ollama pull tinyllama && ollama pull nomic-embed-text"]
     restart: "no"
 
   qdrant:
