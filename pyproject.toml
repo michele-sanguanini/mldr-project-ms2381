@@ -18,6 +18,10 @@ dependencies = [
     "xgboost>=2.0",
     "matplotlib>=3.8",
 
+    # RAG
+    "qdrant-client>=1.9",
+    "pypdf>=4.0",
+
     # Utilities
     "python-dotenv>=1.0",
     "pydantic>=2.0",
