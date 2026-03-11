@@ -51,7 +51,7 @@ def train_linear_regression(X_train, X_test, y_train, y_test):
 
 def train_xgboost(X_train, X_test, y_train, y_test):
     model = xgb.XGBClassifier(
-        n_estimators=100,
+        n_estimators=250,
         max_depth=4,
         random_state=42,
         eval_metric="logloss",

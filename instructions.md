@@ -58,3 +58,7 @@ print(response["message"]["content"])
 ```
 - the result should be a generated AI response; in case of an error like `ollama._types.ResponseError: model requires more system memory (3.5 GiB) than is available (2.7 GiB) (status code: 500)` you might need to allocate more memory to the virtual machine (in Rancher Desktop it is sufficient to go to `Preferences > Virtual Machine > Memory (GB)` and set the limit to 6GB);
 - once you stand down the container (unless you have some local uv/ollama setup) you should not be able to do any of the actions you've just taken.
+
+# Model tracking with DVC
+
+In order to setup some basic ML experiment tracking using DVC we want to 

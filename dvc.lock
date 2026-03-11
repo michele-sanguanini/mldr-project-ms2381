@@ -9,7 +9,7 @@ stages:
       size: 977501
     - path: train.py
       hash: md5
-      md5: 436e706094decbf1980ef728d07b1eaf
+      md5: e88655979e6a608e4f12a0ca76297914
       size: 2629
     outs:
     - path: metrics/linear_regression.json
@@ -18,5 +18,5 @@ stages:
       size: 46
     - path: metrics/xgboost.json
       hash: md5
-      md5: 06dd623000f40615edbf25695f3a3479
-      size: 45
+      md5: 7df886037d858c9b53a83983a1de8543
+      size: 46
